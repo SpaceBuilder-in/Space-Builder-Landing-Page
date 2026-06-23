@@ -39,7 +39,7 @@ export default function Hero() {
                 </h1>
 
                 <p
-                    className="animate-fade-up mx-auto mt-8 max-w-xl text-balance text-lg leading-relaxed text-fg-muted md:text-xl"
+                    className="animate-fade-up mx-auto mt-8 max-w-4xl text-balance text-lg leading-relaxed text-fg-muted md:text-xl"
                     style={{ animationDelay: "220ms" }}
                 >
                     SpaceBuilder helps you build <span className="text-fg">businesses</span> — not just
@@ -52,8 +52,8 @@ export default function Hero() {
                     style={{ animationDelay: "300ms" }}
                 >
                     <a
-                        href="#cta"
-                        className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium text-bg transition-transform hover:-translate-y-0.5"
+                        href="/call"
+                        className="inline-flex items-center gap-2 rounded-full px-7 py-2 text-lg font-medium font-display text-bg transition-transform hover:-translate-y-0.5"
                         style={{ background: "linear-gradient(135deg, var(--gold-1), var(--gold-3))" }}
                     >
                         Book a free call
@@ -61,7 +61,7 @@ export default function Hero() {
                     </a>
                     <a
                         href="#offerings"
-                        className="inline-flex items-center gap-2 rounded-full border border-line-strong px-7 py-3.5 text-sm font-medium text-fg transition-colors hover:bg-surface"
+                        className="inline-flex items-center gap-2 rounded-full border border-line-strong px-7 py-2 text-lg font-medium font-display text-fg transition-colors hover:bg-surface"
                     >
                         See what we do
                     </a>

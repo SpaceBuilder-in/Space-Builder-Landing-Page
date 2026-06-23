@@ -54,7 +54,7 @@ export default function Navbar() {
                     <div className="flex items-center gap-4">
                         {/* Book Free Call Button */}
                         <a
-                            href="#cta"
+                            href="/call"
                             className={`inline-flex items-center justify-center h-12 shrink-0 rounded-full text-lg font-semibold uppercase tracking-wider transition-all duration-200 ${isOpen ? "bg-black text-[#C8A84E] hover:bg-black/90" : "bg-gradient-to-b from-[#E8E4DD] via-white to-[#C8A84E] text-black hover:brightness-110"
                                 }`}
                             style={{ fontFamily: "var(--font-space-grotesk)", paddingLeft: "40px", paddingRight: "40px" }}
