@@ -85,14 +85,15 @@ function Column({ items, reverse, dur }: { items: Quote[]; reverse?: boolean; du
 }
 
 export default function Testimonials() {
-  const colA = QUOTES.slice(0, 3);
-  const colB = QUOTES.slice(3, 6);
+  const colA = [QUOTES[0], QUOTES[3]];
+  const colB = [QUOTES[1], QUOTES[4]];
+  const colC = [QUOTES[2], QUOTES[5]];
 
   return (
     <section id="testimonials" className="relative px-6 py-24 md:py-32">
       <div className="mx-auto max-w-2xl text-center">
         <span className="text-[11px] font-medium uppercase tracking-[0.24em] text-gold-2">
-          What people say
+          What they say about us
         </span>
         <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight text-fg md:text-5xl">
           Teams that build with us,
@@ -102,7 +103,7 @@ export default function Testimonials() {
       </div>
 
       <div
-        className="relative mx-auto mt-16 grid h-[560px] max-w-3xl grid-cols-1 gap-5 md:grid-cols-2"
+        className="relative mx-auto mt-16 grid h-[560px] max-w-md md:max-w-3xl lg:max-w-5xl grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3"
         style={{
           maskImage: "linear-gradient(to bottom, transparent, black 12%, black 88%, transparent)",
         }}
@@ -110,6 +111,9 @@ export default function Testimonials() {
         <Column items={colA} dur="30s" />
         <div className="hidden md:block">
           <Column items={colB} reverse dur="36s" />
+        </div>
+        <div className="hidden lg:block">
+          <Column items={colC} dur="33s" />
         </div>
       </div>
     </section>

@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-
+import Image from 'next/image'
 const navLinks = [
     { label: "Services", href: "#services" },
     { label: "Works", href: "#works" },
@@ -27,32 +27,22 @@ export default function Navbar() {
     return (
         <>
             <header
-                className={`fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-[1300px] z-[60] transition-all duration-300 ${
-                    scrolled && !isOpen
-                        ? "bg-surface/65 bg-gradient-to-r from-[#e4c585]/10 to-[#c69a4e]/5 backdrop-blur-md border border-[#e4c585]/25 shadow-lg shadow-black/20 py-3 rounded-full"
-                        : "border-transparent py-4 bg-transparent rounded-2xl"
-                }`}
+                className={`fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-[1300px] z-[60] transition-all duration-300 ${scrolled && !isOpen
+                    ? "bg-surface/65 bg-gradient-to-r from-[#e4c585]/10 to-[#c69a4e]/5 backdrop-blur-md border border-[#e4c585]/25 shadow-lg shadow-black/20 py-3 rounded-full"
+                    : "border-transparent py-4 bg-transparent rounded-2xl"
+                    }`}
             >
                 <div className="px-6 flex items-center justify-between">
                     <a href="#" className="flex items-center gap-2.5">
-                        <svg
-                            width="28"
-                            height="28"
-                            viewBox="0 0 32 32"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                d="M16 2L28 9V23L16 30L4 23V9L16 2Z"
-                                stroke={isOpen ? "#000000" : "#C8A84E"}
-                                strokeWidth="1.5"
-                                fill="none"
-                                className="transition-colors duration-200"
-                            />
-                            <circle cx="16" cy="15" r="3" fill={isOpen ? "#000000" : "#C8A84E"} className="transition-colors duration-200" />
-                        </svg>
+                        <Image
+                            src="/brand.png"
+                            width={50}
+                            height={50}
+                            className={`border bg-[${isOpen ? "#00000" : "#e4c585"}] border-[3px] rounded-[50%]`}
+                            alt="Picture of the author"
+                        />
                         <span
-                            className={`text-2xl font-semibold tracking-tight transition-colors duration-200 ${isOpen ? "text-black" : "text-foreground"
+                            className={`text-4xl font-semibold tracking-tight transition-colors duration-200 ${isOpen ? "text-black" : "text-foreground"
                                 }`}
                             style={{ fontFamily: "var(--font-space-grotesk)" }}
                         >

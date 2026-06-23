@@ -11,7 +11,7 @@ export default function FlipWord() {
   }, []);
 
   return (
-    <span className="block overflow-hidden pb-[0.12em]">
+    <span className="inline-block overflow-hidden pb-[0.12em] align-bottom">
       <span
         key={i}
         className="block animate-flip-in bg-gradient-to-br from-gold-1 via-gold-2 to-gold-3 bg-clip-text text-transparent"

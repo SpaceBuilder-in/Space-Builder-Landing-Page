@@ -29,11 +29,11 @@ export default function Hero() {
                     AI-driven build studio
                 </span>
 
-                <h1 className="mt-8 font-display text-[19vw] font-semibold leading-[0.92] tracking-tight sm:text-8xl lg:text-[8.5rem]">
-                    <span className="animate-fade-up block" style={{ animationDelay: "80ms" }}>
+                <h1 className="mt-8 font-display text-[12vw] sm:text-7xl md:text-8xl lg:text-[8.5rem] font-semibold leading-[0.92] tracking-tight flex flex-wrap items-center justify-center gap-x-3 md:gap-x-4">
+                    <span className="animate-fade-up inline-block" style={{ animationDelay: "80ms" }}>
                         <FlipWord />
                     </span>
-                    <span className="animate-fade-up block text-fg" style={{ animationDelay: "140ms" }}>
+                    <span className="animate-fade-up inline-block text-fg" style={{ animationDelay: "140ms" }}>
                         Builder
                     </span>
                 </h1>
