@@ -32,7 +32,7 @@ export default function CTA() {
 
                     <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
                         <a
-                            href="#top"
+                            href="/call"
                             className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium text-bg transition-transform hover:-translate-y-0.5"
                             style={{ background: "linear-gradient(135deg, var(--gold-1), var(--gold-3))" }}
                         >
