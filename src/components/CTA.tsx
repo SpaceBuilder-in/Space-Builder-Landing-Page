@@ -23,7 +23,7 @@ export default function CTA() {
         />
 
         <div className="relative mx-auto max-w-2xl">
-          <h2 className="font-display text-5xl font-semibold leading-[1.02] tracking-tight text-fg md:text-6xl">
+          <h2 className="font-display sm:text-5xl text-3xl font-semibold leading-[1.02] tracking-tight text-fg md:text-6xl">
             Ready to <span className="font-serif italic font-normal">transform</span>
             <br />
             your business?

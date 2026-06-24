@@ -22,7 +22,11 @@ export default function Hero() {
 
       <div className="relative mx-auto max-w-5xl text-center">
         <span
-          className="animate-fade-up inline-flex items-center gap-2.5 rounded-full border border-line-strong bg-surface/60 px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.22em] text-fg-muted"
+          className="relative overflow-hidden animate-fade-up inline-flex items-center gap-2.5 rounded-full border border-line-strong bg-surface/60 px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.22em] text-fg-muted
+         after:absolute after:inset-0 after:content-['']
+         after:-translate-x-full
+         after:bg-[linear-gradient(90deg,transparent_40%,color-mix(in_srgb,var(--gold-1)_15%,transparent)_47%,color-mix(in_srgb,var(--gold-3)_50%,transparent)_50%,color-mix(in_srgb,var(--gold-1)_15%,transparent)_53%,transparent_60%)]
+         after:animate-shimmer"
           style={{ animationDelay: "0ms" }}
         >
           <span className="h-1.5 w-1.5 rounded-full" style={{ background: "var(--gold-2)" }} />

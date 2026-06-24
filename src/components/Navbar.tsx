@@ -45,8 +45,8 @@ export default function Navbar() {
               alt="Picture of the author"
             />
             <span
-              className={`text-4xl font-semibold tracking-tight transition-colors duration-200 ${
-                isOpen ? "text-black" : "text-foreground"
+              className={`md:text-4xl text-2xl font-semibold tracking-tight transition-colors duration-200 ${
+                isOpen ? "text-black" : "text-[#e4c585]"
               }`}
               style={{ fontFamily: "var(--font-space-grotesk)" }}
             >
@@ -62,15 +62,15 @@ export default function Navbar() {
             {/* Book Free Call Button */}
             <Link
               href="/call"
-              className={`inline-flex items-center justify-center h-12 shrink-0 rounded-full text-lg font-semibold uppercase tracking-wider transition-all duration-200 ${
-                isOpen
-                  ? "bg-black text-[#C8A84E] hover:bg-black/90"
-                  : "bg-gradient-to-b from-[#E8E4DD] via-white to-[#C8A84E] text-black hover:brightness-110"
-              }`}
+              className={`sm:inline-flex items-center justify-center hidden 
+                h-12 shrink-0 rounded-full md:text-lg text-base font-semibold uppercase md:px-8 px-2
+                tracking-wider transition-all duration-200 ${
+                  isOpen
+                    ? "bg-black text-[#C8A84E] hover:bg-black/90"
+                    : "bg-gradient-to-b from-[#E8E4DD] via-white to-[#C8A84E] text-black hover:brightness-110"
+                }`}
               style={{
                 fontFamily: "var(--font-space-grotesk)",
-                paddingLeft: "40px",
-                paddingRight: "40px",
               }}
             >
               Book Free Call
@@ -99,7 +99,7 @@ export default function Navbar() {
                   animate={isOpen ? { top: "50%", rotate: 45 } : { top: "0%", rotate: 0 }}
                   transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                   className={`absolute left-0 block w-5 h-[1.5px] origin-center transition-colors duration-200 ${
-                    isOpen ? "bg-black" : "bg-foreground"
+                    isOpen ? "bg-black" : "bg-white/50"
                   }`}
                   style={{ top: 0 }}
                 />
@@ -107,14 +107,14 @@ export default function Navbar() {
                   animate={isOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
                   transition={{ duration: 0.2 }}
                   className={`absolute left-0 top-1/2 -translate-y-1/2 block w-3 h-[1.5px] origin-center transition-colors duration-200 ${
-                    isOpen ? "bg-black" : "bg-foreground"
+                    isOpen ? "bg-black" : "bg-white/50"
                   }`}
                 />
                 <motion.span
                   animate={isOpen ? { top: "50%", rotate: -45 } : { top: "100%", rotate: 0 }}
                   transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                   className={`absolute left-0 block w-5 h-[1.5px] origin-center transition-colors duration-200 ${
-                    isOpen ? "bg-black" : "bg-foreground"
+                    isOpen ? "bg-black" : "bg-white/50"
                   }`}
                   style={{ top: "100%" }}
                 />
