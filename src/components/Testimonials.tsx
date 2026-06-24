@@ -6,7 +6,7 @@ interface Quote {
 
 const QUOTES: Quote[] = [
   {
-    text: "SpaceBuilder didn't hand us a website — they rebuilt how our ops team works. Manual reporting went from days to minutes.",
+    text: "SpaceBuilder didn't hand us a website - they rebuilt how our ops team works. Manual reporting went from days to minutes.",
     name: "Maya Hartwell",
     role: "COO, Northwind Logistics",
   },
@@ -74,7 +74,10 @@ function Column({ items, reverse, dur }: { items: Quote[]; reverse?: boolean; du
     <div className="group relative h-full overflow-hidden">
       <div
         className="animate-marquee-y group-hover:[animation-play-state:paused]"
-        style={{ animationDuration: dur, animationDirection: reverse ? "reverse" : "normal" }}
+        style={{
+          animationDuration: dur,
+          animationDirection: reverse ? "reverse" : "normal",
+        }}
       >
         {loop.map((q, i) => (
           <Card key={i} q={q} />
@@ -85,9 +88,9 @@ function Column({ items, reverse, dur }: { items: Quote[]; reverse?: boolean; du
 }
 
 export default function Testimonials() {
-  const colA = [QUOTES[0], QUOTES[3]];
-  const colB = [QUOTES[1], QUOTES[4]];
-  const colC = [QUOTES[2], QUOTES[5]];
+  const colA = [QUOTES[0]!, QUOTES[3]!];
+  const colB = [QUOTES[1]!, QUOTES[4]!];
+  const colC = [QUOTES[2]!, QUOTES[5]!];
 
   return (
     <section id="testimonials" className="relative px-6 py-24 md:py-32">

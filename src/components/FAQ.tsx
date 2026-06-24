@@ -9,15 +9,15 @@ interface QA {
 const FAQS: QA[] = [
   {
     q: "Will your solutions work with the systems we already use?",
-    a: "Yes. We design around your existing stack — CRMs, ERPs, internal tools, spreadsheets — rather than asking you to rip and replace. Integration is the starting point, not an afterthought.",
+    a: "Yes. We design around your existing stack - CRMs, ERPs, internal tools, spreadsheets - rather than asking you to rip and replace. Integration is the starting point, not an afterthought.",
   },
   {
-    q: "We're new to AI — where should we even start?",
+    q: "We're new to AI - where should we even start?",
     a: "That's the most common place we begin. We run a short discovery, map your workflows, and identify the two or three highest-impact opportunities before any build. You get a clear roadmap, not a science project.",
   },
   {
     q: "What industries do you work with?",
-    a: "We've shipped systems across logistics, healthcare, fintech, retail, and SaaS. The patterns of manual work and disconnected tools repeat everywhere — the craft is in tailoring the fix to your context.",
+    a: "We've shipped systems across logistics, healthcare, fintech, retail, and SaaS. The patterns of manual work and disconnected tools repeat everywhere - the craft is in tailoring the fix to your context.",
   },
   {
     q: "Do we need an in-house AI or tech team to work with you?",
@@ -70,9 +70,20 @@ export default function FAQ() {
                   </span>
                   <span
                     className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-line-strong text-fg-muted"
-                    style={isOpen ? { background: "rgba(228,197,133,0.1)", color: "var(--gold-2)" } : undefined}
+                    style={
+                      isOpen
+                        ? {
+                            background: "rgba(228,197,133,0.1)",
+                            color: "var(--gold-2)",
+                          }
+                        : undefined
+                    }
                   >
-                    {isOpen ? <Minus size={15} strokeWidth={2} /> : <Plus size={15} strokeWidth={2} />}
+                    {isOpen ? (
+                      <Minus size={15} strokeWidth={2} />
+                    ) : (
+                      <Plus size={15} strokeWidth={2} />
+                    )}
                   </span>
                 </button>
                 <div

@@ -3,41 +3,41 @@ import { Space_Grotesk, Inter, Lora } from "next/font/google";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
-    variable: "--font-space-grotesk",
-    subsets: ["latin"],
-    weight: ["400", "500", "600", "700"],
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const inter = Inter({
-    variable: "--font-inter",
-    subsets: ["latin"],
-    weight: ["400", "500", "600"],
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
 const lora = Lora({
-    variable: "--font-serif",
-    subsets: ["latin"],
-    weight: ["400"],
-    style: ["italic"],
+  variable: "--font-serif",
+  subsets: ["latin"],
+  weight: ["400"],
+  style: ["italic"],
 });
 
 export const metadata: Metadata = {
-    title: "SpaceBuilder — We Build Digital Experiences",
-    description:
-        "SpaceBuilder is a development agency that builds scalable web applications, enterprise software, and AI-powered workflows.",
+  title: "SpaceBuilder - We Build Digital Experiences",
+  description:
+    "SpaceBuilder is a development agency that builds scalable web applications, enterprise software, and AI-powered workflows.",
 };
 
 export default function RootLayout({
-    children,
+  children,
 }: Readonly<{
-    children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-    return (
-        <html
-            lang="en"
-            className={`${spaceGrotesk.variable} ${inter.variable} ${lora.variable} h-full antialiased`}
-        >
-            <body className="min-h-full flex flex-col">{children}</body>
-        </html>
-    );
+  return (
+    <html
+      lang="en"
+      className={`${spaceGrotesk.variable} ${inter.variable} ${lora.variable} h-full antialiased`}
+    >
+      <body className="min-h-full flex flex-col">{children}</body>
+    </html>
+  );
 }

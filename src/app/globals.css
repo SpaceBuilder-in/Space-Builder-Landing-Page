@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&family=Inter:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&family=Inter:wght@400;500;600&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -58,21 +58,46 @@
   --animate-aurora-drift: aurora-drift 12s ease-in-out infinite;
 
   @keyframes flip-in {
-    0% { transform: translateY(108%); opacity: 0; }
-    60% { opacity: 1; }
-    100% { transform: translateY(0); opacity: 1; }
+    0% {
+      transform: translateY(108%);
+      opacity: 0;
+    }
+    60% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
   @keyframes fade-up {
-    0% { transform: translateY(18px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
+    0% {
+      transform: translateY(18px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
   @keyframes marquee-y {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-50%); }
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
   }
   @keyframes aurora-drift {
-    0%, 100% { transform: translate(-50%, 0) scale(1); opacity: 0.85; }
-    50% { transform: translate(-46%, -4%) scale(1.12); opacity: 1; }
+    0%,
+    100% {
+      transform: translate(-50%, 0) scale(1);
+      opacity: 0.85;
+    }
+    50% {
+      transform: translate(-46%, -4%) scale(1.12);
+      opacity: 1;
+    }
   }
 }
 
@@ -99,8 +124,6 @@ html.custom-cursor-active * {
   background: rgba(232, 228, 221, 0.05);
   pointer-events: none;
 }
-
-
 
 html {
   scroll-behavior: smooth;

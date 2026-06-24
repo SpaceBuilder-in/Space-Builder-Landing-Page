@@ -11,7 +11,7 @@ function SectionHead() {
         <br />A build partner.
       </h2>
       <p className="mx-auto mt-5 max-w-lg text-balance text-base leading-relaxed text-fg-muted">
-        We find what slows your business down — then design the automations, software, and AI
+        We find what slows your business down - then design the automations, software, and AI
         systems that fix it for good.
       </p>
     </div>
@@ -57,7 +57,12 @@ function RoadmapArt() {
         strokeDasharray="240"
         strokeDashoffset="240"
       >
-        <animate attributeName="stroke-dashoffset" values="240;0;0;240" dur="5s" repeatCount="indefinite" />
+        <animate
+          attributeName="stroke-dashoffset"
+          values="240;0;0;240"
+          dur="5s"
+          repeatCount="indefinite"
+        />
       </path>
       {[
         [30, 120],
@@ -92,11 +97,25 @@ function FlowArt() {
         <animateMotion dur="2.6s" repeatCount="indefinite" path="M72 75 H120 V53 H168" />
       </circle>
       <circle r="4" fill="var(--gold-1)">
-        <animateMotion dur="2.6s" begin="1.3s" repeatCount="indefinite" path="M72 75 H120 V97 H168" />
+        <animateMotion
+          dur="2.6s"
+          begin="1.3s"
+          repeatCount="indefinite"
+          path="M72 75 H120 V97 H168"
+        />
       </circle>
     </svg>
   );
 }
+
+const HUB_NODES: [number, number][] = [
+  [162, 75],
+  [141, 111.37],
+  [99, 111.37],
+  [78, 75],
+  [99, 38.63],
+  [141, 38.63],
+];
 
 function HubArt() {
   return (
@@ -104,17 +123,12 @@ function HubArt() {
       <circle cx="120" cy="75" r="42" stroke="var(--line-strong)" strokeWidth="1.2" />
       <circle cx="120" cy="75" r="9" fill="var(--gold-2)" />
       <g>
-        {[0, 60, 120, 180, 240, 300].map((deg) => {
-          const r = 42;
-          const x = 120 + r * Math.cos((deg * Math.PI) / 180);
-          const y = 75 + r * Math.sin((deg * Math.PI) / 180);
-          return (
-            <g key={deg}>
-              <line x1="120" y1="75" x2={x} y2={y} stroke="var(--line)" strokeWidth="1" />
-              <circle cx={x} cy={y} r="4.5" fill="var(--gold-1)" opacity="0.9" />
-            </g>
-          );
-        })}
+        {HUB_NODES.map(([x, y], i) => (
+          <g key={i}>
+            <line x1="120" y1="75" x2={x} y2={y} stroke="var(--line)" strokeWidth="1" />
+            <circle cx={x} cy={y} r="4.5" fill="var(--gold-1)" opacity="0.9" />
+          </g>
+        ))}
         <animateTransform
           attributeName="transform"
           type="rotate"
@@ -139,7 +153,7 @@ const CARDS: Card[] = [
   {
     tag: "Custom software",
     title: "Software that grows with you",
-    desc: "We build enterprise-grade software around your specific needs — scalable, secure, and built to integrate with what you already run.",
+    desc: "We build enterprise-grade software around your specific needs - scalable, secure, and built to integrate with what you already run.",
     art: <LayersArt />,
   },
   {

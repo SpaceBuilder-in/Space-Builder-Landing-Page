@@ -1,15 +1,15 @@
 export function getEmailTemplate({
-    userName,
-    userEmail,
-    userNumber,
-    userQuery,
+  userName,
+  userEmail,
+  userNumber,
+  userQuery,
 }: {
-    userName: string;
-    userEmail: string;
-    userNumber: string;
-    userQuery: string;
+  userName: string;
+  userEmail: string;
+  userNumber: string;
+  userQuery: string;
 }) {
-    return `<!DOCTYPE html>
+  return `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
