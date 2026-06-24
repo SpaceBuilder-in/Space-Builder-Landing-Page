@@ -6,16 +6,18 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navLinks = [
-  { label: "Services", href: "#services" },
-  { label: "Works", href: "#works" },
-  { label: "Team", href: "#team" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Our Offerings", href: "#offerings" },
+  { label: "Our Works", href: "#works" },
+  { label: "Our Team", href: "#team" },
+  { label: "Read FAQ", href: "#faq" },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const hamburgerRef = useRef<HTMLButtonElement>(null);
-  const [clipPathOrigin, setClipPathOrigin] = useState("calc(100% - 3.5rem) 2.75rem");
+  const [clipPathOrigin, setClipPathOrigin] = useState(
+    "calc(100% - 3.5rem) 2.75rem",
+  );
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -51,7 +53,11 @@ export default function Navbar() {
               style={{ fontFamily: "var(--font-space-grotesk)" }}
             >
               Space
-              <span className={isOpen ? "text-black/70 font-semibold" : "text-accent"}>
+              <span
+                className={
+                  isOpen ? "text-black/70 font-semibold" : "text-accent"
+                }
+              >
                 Builder
               </span>
             </span>
@@ -62,7 +68,7 @@ export default function Navbar() {
             {/* Book Free Call Button */}
             <Link
               href="/call"
-              className={`sm:inline-flex items-center justify-center hidden 
+              className={`sm:inline-flex items-center justify-center hidden
                 h-12 shrink-0 rounded-full md:text-lg text-base font-semibold uppercase md:px-8 px-2
                 tracking-wider transition-all duration-200 ${
                   isOpen
@@ -96,7 +102,11 @@ export default function Navbar() {
             >
               <div className="relative w-5 h-4">
                 <motion.span
-                  animate={isOpen ? { top: "50%", rotate: 45 } : { top: "0%", rotate: 0 }}
+                  animate={
+                    isOpen
+                      ? { top: "50%", rotate: 45 }
+                      : { top: "0%", rotate: 0 }
+                  }
                   transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                   className={`absolute left-0 block w-5 h-[1.5px] origin-center transition-colors duration-200 ${
                     isOpen ? "bg-black" : "bg-white/50"
@@ -104,14 +114,22 @@ export default function Navbar() {
                   style={{ top: 0 }}
                 />
                 <motion.span
-                  animate={isOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
+                  animate={
+                    isOpen
+                      ? { opacity: 0, scaleX: 0 }
+                      : { opacity: 1, scaleX: 1 }
+                  }
                   transition={{ duration: 0.2 }}
                   className={`absolute left-0 top-1/2 -translate-y-1/2 block w-3 h-[1.5px] origin-center transition-colors duration-200 ${
                     isOpen ? "bg-black" : "bg-white/50"
                   }`}
                 />
                 <motion.span
-                  animate={isOpen ? { top: "50%", rotate: -45 } : { top: "100%", rotate: 0 }}
+                  animate={
+                    isOpen
+                      ? { top: "50%", rotate: -45 }
+                      : { top: "100%", rotate: 0 }
+                  }
                   transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                   className={`absolute left-0 block w-5 h-[1.5px] origin-center transition-colors duration-200 ${
                     isOpen ? "bg-black" : "bg-white/50"
