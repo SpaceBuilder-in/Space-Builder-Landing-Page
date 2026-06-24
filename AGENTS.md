@@ -14,6 +14,7 @@ This version has breaking changes - APIs, conventions, and file structure may al
 - Pre-commit hooks run typecheck, lint, and format automatically
 - Commit messages follow Conventional Commits via commitlint
 - **Always run `npm run build` before deploying to production** - `tsc --noEmit` can miss build-time errors that only surface during `next build`
+- **Always rebase instead of merge** - Keep git history linear and clean. Use `git rebase` when integrating changes from main or other branches.
 
 ## Team & Contact
 
