@@ -42,7 +42,7 @@ export default function Hero() {
         </h1>
 
         <p
-          className="animate-fade-up mx-auto mt-8 max-w-xl text-balance text-lg leading-relaxed text-fg-muted md:text-xl"
+          className="animate-fade-up mx-auto mt-8 max-w-5xl text-balance text-lg leading-relaxed text-fg-muted md:text-xl"
           style={{ animationDelay: "220ms" }}
         >
           SpaceBuilder helps you build <span className="text-fg">businesses</span> - not just
