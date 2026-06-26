@@ -136,7 +136,7 @@ export default function Navbar() {
               style={{ fontFamily: "var(--font-space-grotesk)" }}
             >
               Space
-              <span className="text-accent font-semibold">Builder</span>
+              <span className="text-white font-semibold">Builder</span>
             </span>
           </Link>
 
@@ -191,7 +191,7 @@ export default function Navbar() {
                     className="text-5xl md:text-6xl font-semibold tracking-tight text-[#e4c585]"
                     style={{ fontFamily: "var(--font-space-grotesk)" }}
                   >
-                    Space<span className="text-accent font-semibold">Builder</span>
+                    Space<span className="text-white font-semibold">Builder</span>
                   </h1>
                   <p className="text-sm text-white/50 tracking-wider mt-3 font-light">
                     A software studio, built different.

@@ -42,6 +42,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn(
         "h-full",
+        "dark",
         "antialiased",
         spaceGrotesk.variable,
         inter.variable,

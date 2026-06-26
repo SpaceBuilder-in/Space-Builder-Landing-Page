@@ -70,7 +70,7 @@ export default function Hero() {
           </a>
           <a
             href="#offerings"
-            className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-line-strong px-4 sm:px-8 py-3 sm:py-4 text-xs sm:text-base md:text-lg font-semibold text-fg transition-colors hover:bg-surface whitespace-nowrap"
+            className="inline-flex items-center justify-center rounded-full border border-line-strong px-6 py-2.5 text-sm font-semibold text-fg transition-colors hover:bg-surface whitespace-nowrap"
           >
             See what we do
           </a>

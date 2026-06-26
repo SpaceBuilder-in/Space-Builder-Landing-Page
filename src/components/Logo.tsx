@@ -15,7 +15,7 @@ export default function Logo() {
         className="text-2xl md:text-4xl font-semibold tracking-tight text-[#e4c585]"
         style={{ fontFamily: "var(--font-space-grotesk)" }}
       >
-        Space<span className="text-accent font-semibold">Builder</span>
+        Space<span className="text-white font-semibold">Builder</span>
       </span>
     </span>
   );
