@@ -8,10 +8,9 @@ import { X, Linkedin } from "lucide-react";
 
 const menuItems = [
   { label: "Home", href: "/" },
-  { label: "Our Offerings", href: "#offerings" },
   { label: "Our Team", href: "/team" },
   { label: "Book Call", href: "/call" },
-  { label: "Read FAQ", href: "#faq" },
+  { label: "Contact", href: "/contact" },
 ];
 
 function XIcon({ className }: { className?: string }) {

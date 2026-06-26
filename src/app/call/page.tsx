@@ -230,7 +230,7 @@ export default function CallPage() {
                       type="tel"
                       id="mobile"
                       name="mobile"
-                      placeholder="+1 (555) 000-0000"
+                      placeholder="+91 XXX0000000"
                       value={formData.mobile}
                       onChange={handleChange}
                       disabled={isSubmitting}
