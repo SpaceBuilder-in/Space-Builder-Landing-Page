@@ -15,6 +15,10 @@ export default function Home() {
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     });
 
+    if (typeof window !== "undefined") {
+      (window as any).lenisInstance = lenis;
+    }
+
     let frameId: number;
     function raf(time: number) {
       lenis.raf(time);
@@ -26,6 +30,9 @@ export default function Home() {
     return () => {
       cancelAnimationFrame(frameId);
       lenis.destroy();
+      if (typeof window !== "undefined") {
+        delete (window as any).lenisInstance;
+      }
     };
   }, []);
 

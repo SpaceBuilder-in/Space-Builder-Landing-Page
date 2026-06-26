@@ -4,12 +4,20 @@ import Link from "next/link";
 
 const COLS = [
   {
-    title: "Services",
-    links: ["AI Automations", "AI Consultation", "Custom Software", "AI Workflows"],
+    title: "Pages",
+    links: [
+      { label: "Home", href: "/" },
+      //   { label: "Work", href: "/work" },
+      { label: "Contact", href: "/contact" },
+    ],
   },
   {
     title: "Company",
-    links: ["Work", "Team", "About", "Contact"],
+    links: [
+      { label: "Offerings", href: "/#offerings" },
+      { label: "Team", href: "/team" },
+      { label: "Book Call", href: "/call" },
+    ],
   },
   {
     title: "Legal",
@@ -32,8 +40,8 @@ export default function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-line px-6 pt-20">
       <div className="mx-auto max-w-[1300px]">
-        <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
-          <div>
+        <div className="grid grid-cols-2 gap-x-8 gap-y-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+          <div className="col-span-2 md:col-span-1">
             <Logo />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-fg-muted">
               We build the systems, automations, and software that grow businesses - not just
@@ -70,20 +78,16 @@ export default function Footer() {
                 {col.title}
               </h4>
               <ul className="mt-4 space-y-3">
-                {col.links.map((l) => {
-                  const label = typeof l === "string" ? l : l.label;
-                  const href = typeof l === "string" ? "#" : l.href;
-                  return (
-                    <li key={label}>
-                      <Link
-                        href={href}
-                        className="text-sm text-fg-muted transition-colors hover:text-fg"
-                      >
-                        {label}
-                      </Link>
-                    </li>
-                  );
-                })}
+                {col.links.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-fg-muted transition-colors hover:text-fg"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           ))}

@@ -1,5 +1,5 @@
-import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { InteractiveHoverButton } from "./ui/interactive-hover-button";
 
 export default function CTA() {
   return (
@@ -32,20 +32,16 @@ export default function CTA() {
             It takes one call to find your first automation.
           </p>
 
-          <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div className="mt-10 flex flex-row items-center justify-center gap-3">
             <Link
               href="/call"
-              className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium text-bg transition-transform hover:-translate-y-0.5"
-              style={{
-                background: "linear-gradient(135deg, var(--gold-1), var(--gold-3))",
-              }}
+              className="inline-block transition-transform hover:-translate-y-0.5 whitespace-nowrap"
             >
-              Book a free call
-              <ArrowRight size={16} strokeWidth={2} />
+              <InteractiveHoverButton>Book a free call</InteractiveHoverButton>
             </Link>
             <a
               href="#offerings"
-              className="inline-flex items-center gap-2 rounded-full border border-line-strong px-7 py-3.5 text-sm font-medium text-fg transition-colors hover:bg-surface"
+              className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-line-strong px-4 sm:px-7 py-3.5 text-xs sm:text-sm font-medium text-fg transition-colors hover:bg-surface whitespace-nowrap"
             >
               See our work
             </a>

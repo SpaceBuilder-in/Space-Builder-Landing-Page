@@ -1,9 +1,9 @@
-import { ArrowRight } from "lucide-react";
-import FlipWord from "./FlipWord";
+import ThreeWave from "./ThreeWave";
+import { InteractiveHoverButton } from "./ui/interactive-hover-button";
 
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden px-6 pt-40 pb-24 md:pt-52 md:pb-32">
+    <section id="top" className="relative overflow-hidden px-6 pt-32 pb-20 md:pt-40 md:pb-24">
       <div
         aria-hidden
         className="bg-dotgrid pointer-events-none absolute inset-0 opacity-60"
@@ -11,6 +11,7 @@ export default function Hero() {
           maskImage: "radial-gradient(ellipse 70% 55% at 50% 30%, black, transparent)",
         }}
       />
+      <ThreeWave />
       <div
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-16 h-[460px] w-[860px] max-w-[95%] -translate-x-1/2 rounded-full"
@@ -37,15 +38,15 @@ export default function Hero() {
           <span>Growth Focused</span>
         </span>
 
-        <h1 className="mt-12 font-display text-[12vw] sm:text-7xl md:text-8xl lg:text-[8.5rem] font-semibold leading-[0.92] tracking-tight flex flex-wrap items-center justify-center gap-x-3 md:gap-x-4">
-          <span className="animate-fade-up inline-block" style={{ animationDelay: "80ms" }}>
-            <FlipWord />
+        <h1 className="mt-12 font-display text-[6.5vw] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold leading-[1.15] tracking-tight flex flex-col items-center justify-center text-center">
+          <span className="animate-fade-up inline-block text-fg" style={{ animationDelay: "80ms" }}>
+            We design and build
           </span>
           <span
-            className="animate-fade-up inline-block text-fg"
-            style={{ animationDelay: "140ms" }}
+            className="animate-fade-up inline-block bg-gradient-to-br from-gold-1 via-gold-2 to-gold-3 bg-clip-text text-transparent mt-1.5 sm:mt-3 font-serif italic font-normal"
+            style={{ animationDelay: "160ms" }}
           >
-            Builder
+            exceptional software
           </span>
         </h1>
 
@@ -54,8 +55,7 @@ export default function Hero() {
           style={{ animationDelay: "220ms" }}
         >
           SpaceBuilder helps you build <span className="text-fg">businesses</span> - not just
-          websites. We design the AI systems, automations, and software that move your company
-          forward.
+          websites. We design AI systems, automations, and software that move your company forward.
         </p>
 
         <div
@@ -64,13 +64,9 @@ export default function Hero() {
         >
           <a
             href="#cta"
-            className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full px-4 sm:px-8 py-3 sm:py-4 text-xs sm:text-base md:text-lg font-semibold text-bg transition-transform hover:-translate-y-0.5 whitespace-nowrap"
-            style={{
-              background: "linear-gradient(135deg, var(--gold-1), var(--gold-3))",
-            }}
+            className="inline-block transition-transform hover:-translate-y-0.5 whitespace-nowrap"
           >
-            Book a free call
-            <ArrowRight className="w-3.5 h-3.5 sm:w-[18px] sm:h-[18px]" strokeWidth={2} />
+            <InteractiveHoverButton>Book a free call</InteractiveHoverButton>
           </a>
           <a
             href="#offerings"

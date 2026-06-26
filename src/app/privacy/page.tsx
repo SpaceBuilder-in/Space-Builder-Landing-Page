@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -102,7 +101,6 @@ We aim to respond to all privacy-related inquiries within **5 business days**.`,
 export default function PrivacyPage() {
   return (
     <div className="w-full min-h-screen relative flex flex-col bg-bg text-fg overflow-hidden">
-      <Navbar />
       <main className="w-full flex-1 flex flex-col pt-28 pb-24">
         <div className="mx-auto max-w-3xl w-full px-6">
           <span className="text-[11px] font-medium uppercase tracking-[0.24em] text-gold-2">

@@ -35,7 +35,8 @@ function AnimatedLink({ href, label, onClick }: AnimatedLinkProps) {
     <Link
       href={href}
       onClick={onClick}
-      className="group relative flex items-baseline gap-2 text-3xl sm:text-4xl font-medium tracking-tight text-white transition-colors duration-300"
+      data-drawer-link
+      className="group relative flex items-baseline gap-2 text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight text-white transition-colors duration-300 py-2 sm:py-3 w-full"
       style={{ fontFamily: "var(--font-space-grotesk)" }}
     >
       <span className="relative overflow-hidden inline-flex">
@@ -85,6 +86,31 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const lenis = typeof window !== "undefined" ? (window as any).lenisInstance : null;
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+      if (lenis) {
+        lenis.stop();
+      }
+    } else {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+      if (lenis) {
+        lenis.start();
+      }
+    }
+    return () => {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+      const activeLenis = typeof window !== "undefined" ? (window as any).lenisInstance : null;
+      if (activeLenis) {
+        activeLenis.start();
+      }
+    };
+  }, [isOpen]);
+
   return (
     <>
       <header
@@ -97,12 +123,11 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="overflow-hidden rounded-full">
+            <div className="overflow-hidden rounded-full relative w-[28px] h-[28px] md:w-[36px] md:h-[36px]">
               <Image
                 src="/brand.png"
-                width={36}
-                height={36}
-                className="border border-[3px] scale-[1.2] bg-[#e4c585]"
+                fill
+                className="border border-[3px] scale-[1.2] bg-[#e4c585] object-cover"
                 alt="Picture of the author"
               />
             </div>
@@ -118,12 +143,14 @@ export default function Navbar() {
           {/* Hamburger Menu Controls */}
           <button
             onClick={() => setIsOpen(true)}
-            className="flex flex-col justify-between items-end w-6 h-3.5 group cursor-pointer"
+            className="p-4 -m-4 group cursor-pointer flex items-center justify-center"
             aria-label="Open Menu"
           >
-            <span className="h-[1.5px] bg-white/85 group-hover:bg-white transition-all duration-300 w-6" />
-            <span className="h-[1.5px] bg-white/85 group-hover:bg-white transition-all duration-300 w-[18px] group-hover:w-6" />
-            <span className="h-[1.5px] bg-white/85 group-hover:bg-white transition-all duration-300 w-[12px] group-hover:w-6" />
+            <div className="flex flex-col justify-between items-end w-6 h-3.5">
+              <span className="h-[1.5px] bg-white/85 group-hover:bg-white transition-all duration-300 w-6" />
+              <span className="h-[1.5px] bg-white/85 group-hover:bg-white transition-all duration-300 w-[18px] group-hover:w-6" />
+              <span className="h-[1.5px] bg-white/85 group-hover:bg-white transition-all duration-300 w-[12px] group-hover:w-6" />
+            </div>
           </button>
         </div>
       </header>
@@ -179,15 +206,17 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", ease: [0.22, 1, 0.36, 1], duration: 0.55 }}
-              className="fixed right-0 top-0 bottom-0 w-full sm:w-[480px] md:w-[540px] z-[55] bg-black border-l border-white/10 text-white flex flex-col justify-between px-6 md:px-12 pb-8 md:pb-14 shadow-2xl overflow-y-auto"
+              className="fixed right-0 top-0 bottom-0 w-full sm:w-[480px] md:w-[540px] z-[55] bg-black border-l border-white/10 text-white flex flex-col justify-between px-6 md:px-12 pb-6 sm:pb-8 md:pb-14 shadow-2xl overflow-y-auto drawer-content-panel"
+              data-lenis-prevent
             >
               {/* Header */}
               <div
-                className={`flex items-center justify-between border-b border-white/10 pb-6 transition-all duration-300 ${
-                  scrolled ? "pt-3" : "pt-5"
+                data-drawer-header
+                className={`flex items-center justify-between border-b border-white/10 pb-4 md:pb-6 transition-all duration-300 ${
+                  scrolled ? "pt-3" : "pt-4 md:pt-5"
                 }`}
               >
-                <span className="text-2xl text-white/40 font-medium uppercase tracking-[0.25em]">
+                <span className="text-xl md:text-2xl text-white/40 font-medium uppercase tracking-[0.25em]">
                   Menu
                 </span>
                 <button
@@ -200,7 +229,10 @@ export default function Navbar() {
               </div>
 
               {/* Menu Links */}
-              <nav className="flex flex-col gap-6 py-10 my-auto">
+              <nav
+                data-drawer-nav
+                className="flex flex-col gap-3 sm:gap-4 md:gap-6 py-6 sm:py-8 md:py-10 my-auto"
+              >
                 {menuItems.map((item, i) => (
                   <motion.div
                     key={item.label}
@@ -222,9 +254,12 @@ export default function Navbar() {
               </nav>
 
               {/* Footer */}
-              <div className="space-y-8 pt-8 border-t border-white/10">
+              <div
+                data-drawer-footer
+                className="space-y-6 md:space-y-8 pt-6 md:pt-8 border-t border-white/10"
+              >
                 {/* Let's Talk */}
-                <div className="space-y-3">
+                <div className="space-y-2 md:space-y-3">
                   <span className="block text-[10px] text-white/40 font-medium uppercase tracking-[0.25em]">
                     Let's Talk
                   </span>

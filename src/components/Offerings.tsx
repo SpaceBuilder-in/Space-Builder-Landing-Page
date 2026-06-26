@@ -30,7 +30,7 @@ const CARDS: Card[] = [
   {
     tag: "Custom software",
     title: "Software that grows with you",
-    desc: "We build enterprise-grade software around your specific needs - scalable, secure, and built to integrate with what you already run.",
+    desc: "We identify the hidden problems holding your business back and build solutions customized exclusively for your business needs.",
     art: <LayersArt />,
   },
   {
