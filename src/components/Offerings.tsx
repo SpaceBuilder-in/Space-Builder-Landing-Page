@@ -8,8 +8,9 @@ function SectionHead() {
         What we offer
       </span>
       <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight text-fg md:text-5xl">
+        A build partner.
+        <br />
         More than a vendor.
-        <br />A build partner.
       </h2>
       <p className="mx-auto mt-5 max-w-lg text-balance text-base leading-relaxed text-fg-muted">
         We find what slows your business down - then design the automations, software, and AI
