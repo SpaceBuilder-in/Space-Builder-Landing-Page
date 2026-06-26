@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ThreeWave from "./ThreeWave";
 import { InteractiveHoverButton } from "./ui/interactive-hover-button";
 
@@ -43,7 +44,7 @@ export default function Hero() {
             We design and build
           </span>
           <span
-            className="animate-fade-up inline-block bg-gradient-to-br from-gold-1 via-gold-2 to-gold-3 bg-clip-text text-transparent mt-1.5 sm:mt-3 font-serif italic font-normal"
+            className="animate-fade-up inline-block bg-gradient-to-br pb-1 from-gold-1 via-gold-2 to-gold-3 bg-clip-text text-transparent mt-1.5 sm:mt-3 font-serif italic font-normal"
             style={{ animationDelay: "160ms" }}
           >
             exceptional software
@@ -62,12 +63,12 @@ export default function Hero() {
           className="animate-fade-up mt-10 flex flex-row items-center justify-center gap-3"
           style={{ animationDelay: "300ms" }}
         >
-          <a
-            href="#cta"
+          <Link
+            href="/call"
             className="inline-block transition-transform hover:-translate-y-0.5 whitespace-nowrap"
           >
             <InteractiveHoverButton>Book a free call</InteractiveHoverButton>
-          </a>
+          </Link>
           <a
             href="#offerings"
             className="inline-flex items-center justify-center rounded-full border border-line-strong px-6 py-2.5 text-sm font-semibold text-fg transition-colors hover:bg-surface whitespace-nowrap"
