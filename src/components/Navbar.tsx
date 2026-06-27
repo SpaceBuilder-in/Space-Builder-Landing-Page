@@ -126,7 +126,7 @@ export default function Navbar() {
             : "bg-transparent border-transparent py-6"
         }`}
       >
-        <div className="md:max-w-[1400px] mx-auto sm:px-12 flex items-center justify-between">
+        <div className="md:max-w-[1400px] mx-auto px-6 sm:px-12 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
             <div className="overflow-hidden rounded-full flex items-center justify-center relative w-[28px] h-[28px] md:w-[38px] md:h-[38px]">
