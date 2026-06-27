@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter, Lora, Geist } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
@@ -26,9 +27,34 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  title: "SpaceBuilder - We Build Digital Experiences",
+  metadataBase: new URL("https://spacebuilder.in"),
+  title: "SpaceBuilder",
   description:
     "SpaceBuilder is a development agency that builds scalable web applications, enterprise software, and AI-powered workflows.",
+  openGraph: {
+    title: "SpaceBuilder",
+    description:
+      "SpaceBuilder is a development agency that builds scalable web applications, enterprise software, and AI-powered workflows.",
+    url: "https://spacebuilder.in",
+    siteName: "SpaceBuilder",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "SpaceBuilder",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SpaceBuilder",
+    description:
+      "SpaceBuilder is a development agency that builds scalable web applications, enterprise software, and AI-powered workflows.",
+    images: ["/og.png"],
+  },
 };
 
 export default function RootLayout({
@@ -56,6 +82,12 @@ export default function RootLayout({
         <Navbar />
         {children}
         {/* </main> */}
+        <Script
+          src="https://usetelemetry.hogyoku.cloud/analytics.js"
+          data-tenant-id="cmqw3iup8004pfmgpnbcrme0z"
+          data-api-key="tlv_1_VTB5H-2WsEx8Hu649JFeizEcZ97HGHj3Ha9ZtnsMSDw"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

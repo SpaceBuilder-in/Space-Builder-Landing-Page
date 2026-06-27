@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import { X, Linkedin } from "lucide-react";
+import { X, Linkedin, Check } from "lucide-react";
 
 const menuItems = [
   { label: "Home", href: "/" },
@@ -76,6 +76,13 @@ function AnimatedLink({ href, label, onClick }: AnimatedLinkProps) {
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [copiedEmail, setCopiedEmail] = useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText("contact@spacebuilder.in");
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2000);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -119,14 +126,14 @@ export default function Navbar() {
             : "bg-transparent border-transparent py-6"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+        <div className="md:max-w-[1400px] mx-auto sm:px-12 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="overflow-hidden rounded-full relative w-[28px] h-[28px] md:w-[36px] md:h-[36px]">
+            <div className="overflow-hidden rounded-full flex items-center justify-center relative w-[28px] h-[28px] md:w-[38px] md:h-[38px]">
               <Image
                 src="/brand.png"
                 fill
-                className="border border-[3px] scale-[1.2] bg-[#e4c585] object-cover"
+                className="border border-[3px] bg-[#EFCE8A] object-cover"
                 alt="Picture of the author"
               />
             </div>
@@ -181,7 +188,7 @@ export default function Navbar() {
                     src="/brand.png"
                     width={80}
                     height={80}
-                    className="border-4 border-[#e4c585] scale-[1.2] bg-[#e4c585]"
+                    className="border-4 border-[#e4c585] scale-[1] bg-[#e4c585]"
                     alt="SpaceBuilder Logo"
                   />
                 </div>
@@ -262,15 +269,25 @@ export default function Navbar() {
                   <span className="block text-[10px] text-white/40 font-medium uppercase tracking-[0.25em]">
                     Let's Talk
                   </span>
-                  <a
-                    href="mailto:contact@spacebuilder.in"
-                    className="group text-xl sm:text-2xl font-medium text-white hover:text-[#e4c585] transition-colors duration-300 border-b border-white/20 hover:border-[#e4c585]/50 pb-1.5 inline-flex items-center gap-1.5"
+                  <button
+                    onClick={handleCopyEmail}
+                    className="group text-xl sm:text-2xl font-medium text-white hover:text-[#e4c585] transition-colors duration-300 border-b border-white/20 hover:border-[#e4c585]/50 pb-1.5 inline-flex items-center gap-1.5 cursor-pointer text-left"
+                    title="Click to copy email address"
                   >
                     contact@spacebuilder.in
-                    <span className="text-white/45 group-hover:text-[#e4c585] transition-colors group-hover:translate-x-0.5 duration-200">
-                      +
+                    <span className="text-white/45 group-hover:text-[#e4c585] transition-colors duration-200 inline-flex items-center">
+                      {copiedEmail ? (
+                        <span className="text-emerald-400 text-xs font-normal bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 flex items-center gap-1">
+                          <Check size={12} className="text-emerald-400" />
+                          Copied!
+                        </span>
+                      ) : (
+                        <span className="group-hover:translate-x-0.5 transition-transform duration-200">
+                          +
+                        </span>
+                      )}
                     </span>
-                  </a>
+                  </button>
                 </div>
 
                 {/* Subfooter: Socials on Left */}
