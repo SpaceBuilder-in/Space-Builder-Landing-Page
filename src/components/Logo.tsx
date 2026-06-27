@@ -7,7 +7,7 @@ export default function Logo() {
         <Image
           src="/brand.png"
           fill
-          className="border border-[3px] scale-[1.2] bg-[#e4c585] object-cover"
+          className="border border-[3px] bg-[#e4c585] object-cover"
           alt="SpaceBuilder Logo"
         />
       </div>

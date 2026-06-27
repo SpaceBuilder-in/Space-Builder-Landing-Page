@@ -5,7 +5,7 @@ import { StarsBackground } from "@/components/animate-ui/components/backgrounds/
 export default function CTA() {
   return (
     <section id="cta" className="relative py-12">
-      <div className="relative mx-auto max-w-[1300px] overflow-hidden rounded-[2rem] border border-line-strong bg-bg-soft text-center">
+      <div className="relative mx-auto max-w-[1300px] overflow-hidden sm:rounded-[2rem] border border-line-strong bg-bg-soft text-center">
         <StarsBackground
           className="w-full bg-transparent px-6 py-24 md:py-32"
           pointerEvents={false}
