@@ -55,7 +55,7 @@ export default function ThreeWave() {
     scene.add(mesh);
 
     // Animation variables
-    const clock = new THREE.Clock();
+    const timer = new THREE.Timer();
     let animationFrameId: number;
 
     const positionAttribute = geometry.attributes.position;
@@ -71,7 +71,8 @@ export default function ThreeWave() {
 
     // Animation loop
     const animate = () => {
-      const time = clock.getElapsedTime() * 0.4;
+      timer.update();
+      const time = timer.getElapsed() * 0.4;
 
       // Update geometry vertices to simulate wave motion
       for (let i = 0; i < count; i++) {

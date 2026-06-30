@@ -63,7 +63,7 @@
         "*.{ts,tsx}": [
             "oxlint --fix"
         ],
-        "*.{ts,tsx,css,json,md}": [
+        "*.{ts,tsx,css}": [
             "oxfmt --write"
         ]
     }

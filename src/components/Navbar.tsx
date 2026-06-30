@@ -133,6 +133,7 @@ export default function Navbar() {
               <Image
                 src="/brand.png"
                 fill
+                sizes="38px"
                 className="border border-[3px] bg-[#EFCE8A] object-cover"
                 alt="Picture of the author"
               />
