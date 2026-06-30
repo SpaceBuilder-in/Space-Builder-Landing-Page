@@ -15,6 +15,7 @@ This version has breaking changes - APIs, conventions, and file structure may al
 - Commit messages follow Conventional Commits via commitlint
 - **Always run `npm run build` before deploying to production** - `tsc --noEmit` can miss build-time errors that only surface during `next build`
 - **Always rebase instead of merge** - Keep git history linear and clean. Use `git rebase` when integrating changes from main or other branches.
+- **Always get updated at the start of every session** - Before doing any work, run `git checkout main && git pull` to fetch latest, then `git checkout <branch> && git rebase main` to bring your working branch up to date. This avoids stale work and merge conflicts.
 
 ## Team & Contact
 
