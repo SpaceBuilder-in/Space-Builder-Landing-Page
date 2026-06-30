@@ -2,8 +2,10 @@
 
 import * as React from "react";
 import {
+  LazyMotion,
+  m,
+  domAnimation,
   type HTMLMotionProps,
-  motion,
   useMotionValue,
   useSpring,
   type SpringOptions,
@@ -37,14 +39,10 @@ function StarLayer({
   className,
   ...props
 }: StarLayerProps) {
-  const [boxShadow, setBoxShadow] = React.useState<string>("");
-
-  React.useEffect(() => {
-    setBoxShadow(generateStars(count, starColor));
-  }, [count, starColor]);
+  const boxShadow = React.useMemo(() => generateStars(count, starColor), [count, starColor]);
 
   return (
-    <motion.div
+    <m.div
       data-slot="star-layer"
       animate={{ y: [0, -2000] }}
       transition={transition}
@@ -67,7 +65,7 @@ function StarLayer({
           boxShadow: boxShadow,
         }}
       />
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -108,48 +106,50 @@ function StarsBackground({
   );
 
   return (
-    <div
-      data-slot="stars-background"
-      className={cn(
-        "relative size-full overflow-hidden bg-[radial-gradient(ellipse_at_bottom,_#262626_0%,_#000_100%)]",
-        className,
-      )}
-      onMouseMove={handleMouseMove}
-      {...props}
-    >
-      <motion.div
-        style={{ x: springX, y: springY }}
-        className={cn({ "pointer-events-none": !pointerEvents })}
+    <LazyMotion features={domAnimation}>
+      <div
+        data-slot="stars-background"
+        className={cn(
+          "relative size-full overflow-hidden bg-[radial-gradient(ellipse_at_bottom,_#262626_0%,_#000_100%)]",
+          className,
+        )}
+        onMouseMove={handleMouseMove}
+        {...props}
       >
-        <StarLayer
-          count={1000}
-          size={1}
-          transition={{ repeat: Infinity, duration: speed, ease: "linear" }}
-          starColor={starColor}
-        />
-        <StarLayer
-          count={400}
-          size={2}
-          transition={{
-            repeat: Infinity,
-            duration: speed * 2,
-            ease: "linear",
-          }}
-          starColor={starColor}
-        />
-        <StarLayer
-          count={200}
-          size={3}
-          transition={{
-            repeat: Infinity,
-            duration: speed * 3,
-            ease: "linear",
-          }}
-          starColor={starColor}
-        />
-      </motion.div>
-      {children}
-    </div>
+        <m.div
+          style={{ x: springX, y: springY }}
+          className={cn({ "pointer-events-none": !pointerEvents })}
+        >
+          <StarLayer
+            count={1000}
+            size={1}
+            transition={{ repeat: Infinity, duration: speed, ease: "linear" }}
+            starColor={starColor}
+          />
+          <StarLayer
+            count={400}
+            size={2}
+            transition={{
+              repeat: Infinity,
+              duration: speed * 2,
+              ease: "linear",
+            }}
+            starColor={starColor}
+          />
+          <StarLayer
+            count={200}
+            size={3}
+            transition={{
+              repeat: Infinity,
+              duration: speed * 3,
+              ease: "linear",
+            }}
+            starColor={starColor}
+          />
+        </m.div>
+        {children}
+      </div>
+    </LazyMotion>
   );
 }
 
