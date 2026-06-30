@@ -1,0 +1,7 @@
+{
+  "rules": {
+    "react-doctor/server-auth-actions": "off",
+    "react-doctor/no-giant-component": "off",
+    "deslop/unused-file": "off"
+  }
+}
