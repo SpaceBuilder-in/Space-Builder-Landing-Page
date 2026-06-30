@@ -28,13 +28,13 @@ const lora = Lora({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://spacebuilder.in"),
-  title: "SpaceBuilder",
+  title: "SpaceBuilder | Custom Software, AI Automation & Web Development",
   description:
-    "SpaceBuilder is a development agency that builds scalable web applications, enterprise software, and AI-powered workflows.",
+    "SpaceBuilder builds custom software, AI-powered automations, and scalable web applications for SaaS companies and growing businesses.",
   openGraph: {
-    title: "SpaceBuilder",
+    title: "SpaceBuilder | Custom Software, AI Automation & Web Development",
     description:
-      "SpaceBuilder is a development agency that builds scalable web applications, enterprise software, and AI-powered workflows.",
+      "SpaceBuilder builds custom software, AI-powered automations, and scalable web applications for SaaS companies and growing businesses.",
     url: "https://spacebuilder.in",
     siteName: "SpaceBuilder",
     images: [
@@ -50,9 +50,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SpaceBuilder",
+    title: "SpaceBuilder | Custom Software, AI Automation & Web Development",
     description:
-      "SpaceBuilder is a development agency that builds scalable web applications, enterprise software, and AI-powered workflows.",
+      "SpaceBuilder builds custom software, AI-powered automations, and scalable web applications for SaaS companies and growing businesses.",
     images: ["/og.png"],
   },
 };
