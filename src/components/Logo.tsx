@@ -7,6 +7,7 @@ export default function Logo() {
         <Image
           src="/brand.png"
           fill
+          sizes="36px"
           className="border border-[3px] bg-[#e4c585] object-cover"
           alt="SpaceBuilder Logo"
         />

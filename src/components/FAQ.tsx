@@ -63,6 +63,7 @@ export default function FAQ() {
             return (
               <div key={item.q}>
                 <button
+                  type="button"
                   onClick={() => setOpen(isOpen ? null : idx)}
                   className="flex w-full items-center justify-between gap-6 py-5 text-left"
                 >

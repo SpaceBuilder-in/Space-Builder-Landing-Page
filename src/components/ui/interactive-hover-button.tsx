@@ -9,6 +9,7 @@ export function InteractiveHoverButton({
 }: React.ButtonHTMLAttributes<HTMLButtonElement>) {
   return (
     <button
+      type="button"
       className={cn(
         "group relative w-auto cursor-pointer overflow-hidden rounded-full border border-gold-3/40 bg-transparent p-2.5 px-6 text-center text-sm font-semibold text-gold-2 transition-all duration-300 hover:border-gold-2",
         className,

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Footer from "@/components/Footer";
+import { MarkdownContent } from "@/lib/markdown";
 
 export const metadata: Metadata = {
   title: "Privacy Policy - SpaceBuilder",
@@ -123,23 +124,7 @@ export default function PrivacyPage() {
                   {section.title}
                 </h2>
                 <div className="mt-3 space-y-4">
-                  {section.content.split("\n\n").map((paragraph, i) => (
-                    <p
-                      key={i}
-                      className="text-sm leading-relaxed text-fg-muted"
-                      dangerouslySetInnerHTML={{
-                        __html: paragraph
-                          .replace(
-                            /\*\*(.*?)\*\*/g,
-                            '<strong class="font-medium text-fg">$1</strong>',
-                          )
-                          .replace(
-                            /\[(.*?)\]\((.*?)\)/g,
-                            '<a href="$2" class="text-gold-2 underline underline-offset-2 hover:text-gold-1 transition-colors">$1</a>',
-                          ),
-                      }}
-                    />
-                  ))}
+                  <MarkdownContent text={section.content} />
                 </div>
               </section>
             ))}

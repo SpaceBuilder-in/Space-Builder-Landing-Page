@@ -1,5 +1,10 @@
 import type { ReactNode } from "react";
-import { LayersArt, FlowArt, HubArt, ConsultancyArt, VibeArt, AuditArt } from "./svg";
+import { LayersArt } from "./svg/LayersArt";
+import { FlowArt } from "./svg/FlowArt";
+import { HubArt } from "./svg/HubArt";
+import { ConsultancyArt } from "./svg/ConsultancyArt";
+import { VibeArt } from "./svg/VibeArt";
+import { AuditArt } from "./svg/AuditArt";
 
 function SectionHead() {
   return (

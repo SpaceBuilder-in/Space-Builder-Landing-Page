@@ -18,7 +18,7 @@ export default function Hero() {
         className="pointer-events-none absolute left-1/2 top-16 h-[460px] w-[860px] max-w-[95%] -translate-x-1/2 rounded-full"
         style={{
           background: "radial-gradient(ellipse at center, rgba(228,197,133,0.18), transparent 68%)",
-          filter: "blur(14px)",
+          filter: "blur(9px)",
         }}
       />
 
