@@ -33,9 +33,8 @@ export default function ThreeWave() {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     container.appendChild(renderer.domElement);
 
-    // Geometry - landscape plane
-    // segments: 64x64 creates a high-quality wireframe mesh that is still highly performant
-    const geometry = new THREE.PlaneGeometry(160, 160, 64, 64);
+    // Geometry - landscape plane (reduced from 64x64 to 48x48 for performance)
+    const geometry = new THREE.PlaneGeometry(160, 160, 48, 48);
 
     // Rotate geometry to lie horizontally
     geometry.rotateX(-Math.PI / 2);
@@ -57,6 +56,7 @@ export default function ThreeWave() {
     // Animation variables
     const timer = new THREE.Timer();
     let animationFrameId: number;
+    let isVisible = true;
 
     const positionAttribute = geometry.attributes.position;
     if (!positionAttribute) return;
@@ -71,6 +71,11 @@ export default function ThreeWave() {
 
     // Animation loop
     const animate = () => {
+      if (!isVisible) {
+        animationFrameId = requestAnimationFrame(animate);
+        return;
+      }
+
       timer.update();
       const time = timer.getElapsed() * 0.4;
 
@@ -93,6 +98,15 @@ export default function ThreeWave() {
       animationFrameId = requestAnimationFrame(animate);
     };
 
+    // IntersectionObserver to pause when hero is off-screen
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry?.isIntersecting ?? false;
+      },
+      { threshold: 0 },
+    );
+    observer.observe(container);
+
     animate();
 
     // Resize Handler
@@ -111,6 +125,7 @@ export default function ThreeWave() {
 
     // Cleanup
     return () => {
+      observer.disconnect();
       window.removeEventListener("resize", handleResize);
       cancelAnimationFrame(animationFrameId);
 

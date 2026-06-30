@@ -149,6 +149,14 @@
   }
 }
 
+.animate-marquee-y {
+  will-change: transform;
+}
+
+.animate-aurora-drift {
+  will-change: transform, opacity;
+}
+
 /* Custom Cursor & Grid Utilities */
 html.custom-cursor-active,
 html.custom-cursor-active * {
@@ -232,25 +240,9 @@ body,
   background-size: 28px 28px;
 }
 
-html.lenis,
-html.lenis body {
-  height: auto;
-}
-
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
+/* Drawer scroll containment */
+[data-lenis-prevent] {
   overscroll-behavior: contain;
-}
-
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
-.lenis.lenis-scrolling iframe {
-  pointer-events: none;
 }
 
 @theme inline {
