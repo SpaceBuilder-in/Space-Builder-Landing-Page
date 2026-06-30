@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useMemo, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
 import Link from "next/link";
 import { InteractiveHoverButton } from "./ui/interactive-hover-button";
 
@@ -21,7 +21,7 @@ function StarsBackground({
     }>;
   } | null>(null);
 
-  useEffect(() => {
+  useMemo(() => {
     import("./animate-ui/components/backgrounds/stars").then((m) =>
       setMod({ StarsBackground: m.StarsBackground }),
     );
@@ -86,21 +86,7 @@ function CTAContent() {
 
 export default function CTA() {
   const sectionRef = useRef<HTMLElement>(null);
-  const [inView, setInView] = useState(false);
-
-  useEffect(() => {
-    const el = sectionRef.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => setInView(entry?.isIntersecting ?? false),
-      {
-        threshold: 0,
-        rootMargin: "200px",
-      },
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
+  const inView = useIntersectionObserver(sectionRef);
 
   return (
     <section id="cta" className="relative py-12" ref={sectionRef}>
@@ -120,4 +106,33 @@ export default function CTA() {
       </div>
     </section>
   );
+}
+
+function useIntersectionObserver(ref: React.RefObject<HTMLElement | null>): boolean {
+  const valueRef = useRef(false);
+
+  const subscribe = useMemo(
+    () => (onStoreChange: () => void) => {
+      const el = ref.current;
+      if (!el) return () => {};
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          const next = entry?.isIntersecting ?? false;
+          if (next !== valueRef.current) {
+            valueRef.current = next;
+            onStoreChange();
+          }
+        },
+        { threshold: 0, rootMargin: "200px" },
+      );
+      observer.observe(el);
+      return () => observer.disconnect();
+    },
+    [ref],
+  );
+
+  const getSnapshot = useMemo(() => () => valueRef.current, []);
+
+  return useSyncExternalStore(subscribe, getSnapshot, () => false);
 }
