@@ -44,7 +44,7 @@ export default function ContactContent() {
         className="pointer-events-none absolute left-1/2 top-24 h-[450px] w-[750px] max-w-[95%] -translate-x-1/2 rounded-full"
         style={{
           background: "radial-gradient(ellipse at center, rgba(228,197,133,0.07), transparent 70%)",
-          filter: "blur(18px)",
+          filter: "blur(9px)",
         }}
       />
 
@@ -82,6 +82,7 @@ export default function ContactContent() {
             </div>
             <div className="mt-6 flex items-center gap-3 border-t border-white/5 pt-4">
               <button
+                type="button"
                 onClick={() => handleCopy("contact@spacebuilder.in")}
                 className="inline-flex items-center gap-1.5 text-xs text-white/50 hover:text-white transition-colors cursor-pointer bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-lg"
               >
@@ -146,6 +147,7 @@ export default function ContactContent() {
             </div>
             <div className="mt-6 flex items-center gap-2 border-t border-white/5 pt-4">
               <button
+                type="button"
                 onClick={() => handleCopy("help@spacebuilder.in")}
                 className="inline-flex items-center gap-1 text-[11px] text-white/50 hover:text-white transition-colors cursor-pointer bg-white/5 hover:bg-white/10 px-2.5 py-1.5 rounded-lg"
               >
@@ -210,6 +212,7 @@ export default function ContactContent() {
             </div>
             <div className="mt-6 flex items-center gap-2 border-t border-white/5 pt-4">
               <button
+                type="button"
                 onClick={() => handleCopy("socials@spacebuilder.in")}
                 className="inline-flex items-center gap-1 text-[11px] text-white/50 hover:text-white transition-colors cursor-pointer bg-white/5 hover:bg-white/10 px-2.5 py-1.5 rounded-lg"
               >

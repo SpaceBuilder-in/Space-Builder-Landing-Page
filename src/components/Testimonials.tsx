@@ -79,19 +79,19 @@ function Column({ items, reverse, dur }: { items: Quote[]; reverse?: boolean; du
           animationDirection: reverse ? "reverse" : "normal",
         }}
       >
-        {loop.map((q, i) => (
-          <Card key={i} q={q} />
+        {loop.map((q) => (
+          <Card key={q.name} q={q} />
         ))}
       </div>
     </div>
   );
 }
 
-export default function Testimonials() {
-  const colA = [QUOTES[0]!, QUOTES[3]!];
-  const colB = [QUOTES[1]!, QUOTES[4]!];
-  const colC = [QUOTES[2]!, QUOTES[5]!];
+const COL_A = [QUOTES[0]!, QUOTES[3]!];
+const COL_B = [QUOTES[1]!, QUOTES[4]!];
+const COL_C = [QUOTES[2]!, QUOTES[5]!];
 
+export default function Testimonials() {
   return (
     <section id="testimonials" className="relative px-6 py-24 md:py-32">
       <div className="mx-auto max-w-2xl text-center">
@@ -111,12 +111,12 @@ export default function Testimonials() {
           maskImage: "linear-gradient(to bottom, transparent, black 12%, black 88%, transparent)",
         }}
       >
-        <Column items={colA} dur="30s" />
+        <Column items={COL_A} dur="30s" />
         <div className="hidden md:block">
-          <Column items={colB} reverse dur="36s" />
+          <Column items={COL_B} reverse dur="36s" />
         </div>
         <div className="hidden lg:block">
-          <Column items={colC} dur="33s" />
+          <Column items={COL_C} dur="33s" />
         </div>
       </div>
     </section>

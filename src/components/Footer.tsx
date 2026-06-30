@@ -94,7 +94,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-line py-7 text-center sm:flex-row sm:text-left">
-          <p className="text-xs text-fg-muted">
+          <p className="text-xs text-fg-muted" suppressHydrationWarning>
             &copy; {new Date().getFullYear()} SpaceBuilder. All rights reserved.
           </p>
           <p className="text-xs text-fg-muted">Designed &amp; built to last.</p>
