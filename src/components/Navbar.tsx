@@ -93,27 +93,16 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const lenis = typeof window !== "undefined" ? (window as any).lenisInstance : null;
     if (isOpen) {
       document.body.style.overflow = "hidden";
       document.documentElement.style.overflow = "hidden";
-      if (lenis) {
-        lenis.stop();
-      }
     } else {
       document.body.style.overflow = "";
       document.documentElement.style.overflow = "";
-      if (lenis) {
-        lenis.start();
-      }
     }
     return () => {
       document.body.style.overflow = "";
       document.documentElement.style.overflow = "";
-      const activeLenis = typeof window !== "undefined" ? (window as any).lenisInstance : null;
-      if (activeLenis) {
-        activeLenis.start();
-      }
     };
   }, [isOpen]);
 
