@@ -4,12 +4,16 @@ import { InteractiveHoverButton } from "./ui/interactive-hover-button";
 
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden px-6 pt-32 pb-20 md:pt-40 md:pb-24">
+    <section
+      id="top"
+      className="relative overflow-hidden px-6 pt-32 pb-20 md:pt-40 md:pb-24"
+    >
       <div
         aria-hidden
         className="bg-dotgrid pointer-events-none absolute inset-0 opacity-60"
         style={{
-          maskImage: "radial-gradient(ellipse 70% 55% at 50% 30%, black, transparent)",
+          maskImage:
+            "radial-gradient(ellipse 70% 55% at 50% 30%, black, transparent)",
         }}
       />
       <ThreeWave />
@@ -17,7 +21,8 @@ export default function Hero() {
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-16 h-[460px] w-[860px] max-w-[95%] -translate-x-1/2 rounded-full"
         style={{
-          background: "radial-gradient(ellipse at center, rgba(228,197,133,0.18), transparent 68%)",
+          background:
+            "radial-gradient(ellipse at center, rgba(228,197,133,0.18), transparent 68%)",
           filter: "blur(9px)",
         }}
       />
@@ -40,14 +45,17 @@ export default function Hero() {
         </span>
 
         <h1 className="mt-12 font-display text-[6.5vw] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold leading-[1.15] tracking-tight flex flex-col items-center justify-center text-center">
-          <span className="animate-fade-up inline-block text-fg" style={{ animationDelay: "80ms" }}>
+          <span
+            className="animate-fade-up inline-block text-fg"
+            style={{ animationDelay: "80ms" }}
+          >
             We design and build
           </span>
           <span
-            className="animate-fade-up inline-block bg-gradient-to-br pb-1 from-gold-1 via-gold-2 to-gold-3 bg-clip-text text-transparent mt-1.5 sm:mt-3 font-serif italic font-normal"
+            className="animate-fade-up inline-block bg-linear-to-br pb-1 from-gold-1 via-gold-2 to-gold-3 bg-clip-text text-transparent mt-1.5 sm:mt-3 font-serif italic font-normal"
             style={{ animationDelay: "160ms" }}
           >
-            exceptional software
+            custom software &amp; automation
           </span>
         </h1>
 
@@ -55,8 +63,10 @@ export default function Hero() {
           className="animate-fade-up mx-auto mt-8 max-w-5xl text-balance text-lg leading-relaxed text-fg-muted md:text-xl"
           style={{ animationDelay: "220ms" }}
         >
-          SpaceBuilder helps you build <span className="text-fg">businesses</span> - not just
-          websites. We design AI systems, automations, and software that move your company forward.
+          SpaceBuilder helps you build{" "}
+          <span className="text-fg">businesses</span> - not just websites. We
+          design AI-powered automations, custom software, and web applications
+          that move your company forward.
         </p>
 
         <div

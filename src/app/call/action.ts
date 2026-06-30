@@ -180,7 +180,7 @@ export async function sendEmailAction(data: {
         <p>We are excited about the opportunity to partner with you and build scalable, high-performance systems for your business.</p>
         <div class="divider"></div>
         <p style="font-size: 14px; font-style: italic; color: #888888; text-align: center;">
-          "We find what slows your business down - then design the automations, software, and AI systems that fix it for good."
+          "We find what slows your business down - then design the automations, software, and AI-powered workflows that fix it for good."
         </p>
         <div class="divider"></div>
         <div class="footer">

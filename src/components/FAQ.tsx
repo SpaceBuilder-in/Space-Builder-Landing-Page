@@ -18,7 +18,7 @@ const FAQS: QA[] = [
   },
   {
     q: "What industries do you work with?",
-    a: "We've shipped systems across logistics, healthcare, fintech, retail, and SaaS. The patterns of manual work and disconnected tools repeat everywhere - the craft is in tailoring the fix to your context.",
+    a: "We primarily work with SaaS companies and general business automation. The patterns of manual work and disconnected tools repeat everywhere - the craft is in tailoring the fix to your context.",
   },
   {
     q: "Do we need an in-house AI or tech team to work with you?",
